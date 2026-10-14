@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../controller/apicall.dart';
+
 class dashboard extends StatefulWidget {
   const dashboard({super.key});
 
@@ -9,6 +11,12 @@ class dashboard extends StatefulWidget {
 
 
 class dashboardState extends State<dashboard> {
+
+  @override
+  void initState() {
+    super.initState();
+    Apicall().getnewsdata();
+  }
 
   horizontallistitem(size, String title, url, date) {
     return GestureDetector(
