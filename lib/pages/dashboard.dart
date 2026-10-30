@@ -177,6 +177,21 @@ class dashboardState extends State<dashboard> {
                                 }
                             ),
                           ),
+                          Container(
+                            height: size.height/1.6,
+                            child: ListView.builder(
+                                padding: EdgeInsets.zero,
+                                scrollDirection: Axis.vertical,
+                                itemCount: data!.articles!.length,
+                                itemBuilder: (BuildContext context, int index) {
+                                  return  verticallistitem(size,
+                                      data.articles![index].title!.toUpperCase(),
+                                      data.articles![index].urlToImage,
+                                      data.articles![index].publishedAt!.split("T")[0],
+                                      data.articles![index].source!.name);
+                                }
+                            ),
+                          ),
                         ],
                       );
                     }else{
@@ -184,43 +199,6 @@ class dashboardState extends State<dashboard> {
                     }
                 }
               }),
-
-          //vertical scroll items
-          Container(
-            height: size.height/1.6,
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                 verticallistitem(size,
-                     " happy dashain pcps family skdalsjdajd",
-                     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNBJaFUb3pMu0XkkBdNkmsaBuZoYsR78LNMLGEdLPig&s=10",
-                     "02 feb 2026",
-                     "PCPSNEWS"),
-                  verticallistitem(size,
-                      "title  dashain pcps family skdalsjdajd",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNBJaFUb3pMu0XkkBdNkmsaBuZoYsR78LNMLGEdLPig&s=10",
-                      "02 feb 2026",
-                      "PCPSNEWS"),
-                  verticallistitem(size,
-                      "title happy  pcps family skdalsjdajd",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNBJaFUb3pMu0XkkBdNkmsaBuZoYsR78LNMLGEdLPig&s=10",
-                      "02 feb 2026",
-                      "PCPSNEWS"),
-                  verticallistitem(size,
-                      "title happy dashain family ",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNBJaFUb3pMu0XkkBdNkmsaBuZoYsR78LNMLGEdLPig&s=10",
-                      "02 feb 2026",
-                      "PCPSNEWS"),
-                  verticallistitem(size,
-                      "title happy",
-                      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYNBJaFUb3pMu0XkkBdNkmsaBuZoYsR78LNMLGEdLPig&s=10",
-                      "02 feb 2026",
-                      "PCPSNEWS"),
-
-                ],
-              ),
-            ),
-          ),
 
         ],
       ),
